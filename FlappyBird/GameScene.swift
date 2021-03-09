@@ -83,41 +83,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         setupWall()
         setupBird()
         setupItem()
-        
         setupScoreLabel()
         
         
-    }
-    
-    func setupScoreLabel(){
-           score = 0
-           scoreLabelNode = SKLabelNode(fontNamed: "Helvetica")
-           scoreLabelNode.fontColor = UIColor.black
-           scoreLabelNode.position = CGPoint(x: 10, y: self.frame.size.height - 30)
-           scoreLabelNode.zPosition = 100 // 一番手前に表示する
-           scoreLabelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-           scoreLabelNode.text = "Score:\(score)"
-           self.addChild(scoreLabelNode)
-
-           bestScoreLabelNode = SKLabelNode(fontNamed: "Helvetica")
-           bestScoreLabelNode.fontColor = UIColor.black
-           bestScoreLabelNode.position = CGPoint(x: 10, y: self.frame.size.height - 60)
-           bestScoreLabelNode.zPosition = 100 // 一番手前に表示する
-           bestScoreLabelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-           
-           let bestScore = userDefaults.integer(forKey: "BEST")
-           bestScoreLabelNode.text = "Best Score:\(bestScore)"
-           self.addChild(bestScoreLabelNode)
-
-           // アイテムスコア ★
-           itemScore = 0
-           itemScoreLabelNode = SKLabelNode(fontNamed: "Helvetica")
-           itemScoreLabelNode.fontColor = UIColor.black
-           itemScoreLabelNode.position = CGPoint(x: 10, y: self.frame.size.height - 90)
-           itemScoreLabelNode.zPosition = 100 // 一番手前に表示する
-           itemScoreLabelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
-           itemScoreLabelNode.text = "Item Score:\(itemScore)"
-           self.addChild(itemScoreLabelNode)
     }
 
     func setupGround() {
@@ -414,6 +382,39 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // スプライトを追加する
             addChild(bird)
         }
+    
+    func setupScoreLabel(){
+           score = 0
+           scoreLabelNode = SKLabelNode(fontNamed: "Helvetica")
+           scoreLabelNode.fontColor = UIColor.black
+           scoreLabelNode.position = CGPoint(x: 10, y: self.frame.size.height - 30)
+           scoreLabelNode.zPosition = 100 // 一番手前に表示する
+           scoreLabelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+           scoreLabelNode.text = "Score:\(score)"
+           self.addChild(scoreLabelNode)
+
+           bestScoreLabelNode = SKLabelNode(fontNamed: "Helvetica")
+           bestScoreLabelNode.fontColor = UIColor.black
+           bestScoreLabelNode.position = CGPoint(x: 10, y: self.frame.size.height - 60)
+           bestScoreLabelNode.zPosition = 100 // 一番手前に表示する
+           bestScoreLabelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+           
+           let bestScore = userDefaults.integer(forKey: "BEST")
+           bestScoreLabelNode.text = "Best Score:\(bestScore)"
+           self.addChild(bestScoreLabelNode)
+
+           // アイテムスコア ★
+           itemScore = 0
+           itemScoreLabelNode = SKLabelNode(fontNamed: "Helvetica")
+           itemScoreLabelNode.fontColor = UIColor.black
+           itemScoreLabelNode.position = CGPoint(x: 10, y: self.frame.size.height - 90)
+           itemScoreLabelNode.zPosition = 100 // 一番手前に表示する
+           itemScoreLabelNode.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.left
+           itemScoreLabelNode.text = "Item Score:\(itemScore)"
+           self.addChild(itemScoreLabelNode)
+    }
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if scrollNode.speed > 0 {
 //        鳥の速度をゼロにする
@@ -425,6 +426,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             restart()
         }
     }
+    
     
 //    衝突事に呼ばれるメソッド
     func didBegin(_ contact: SKPhysicsContact) {
@@ -444,12 +446,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             var bestScore = userDefaults.integer(forKey: "BEST")
             if score > bestScore {
                 bestScore = score
+                bestScoreLabelNode.text = "Best Score:\(bestScore)"
                 userDefaults.set(bestScore, forKey: "BEST")
                 userDefaults.synchronize()
             }
         } else if (contact.bodyA.categoryBitMask & itemCategory) == itemCategory || (contact.bodyB.categoryBitMask & itemCategory) == itemCategory {
             // アイテムと衝突した時 ★
             print("GetItem!")
+            itemScore += 1
+            itemScoreLabelNode.text = "Item Score:\(itemScore)"
+            itemPlayer?.play()
             
             // 効果音を鳴らす
             self.run(soundAction)
@@ -461,9 +467,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 circleBody = contact.bodyA
             }
             circleBody.node?.removeFromParent()
-            itemScore += 1
-            itemScoreLabelNode.text = "Item Score:\(itemScore)"
-            
+           
             
         } else {
 //           壁か地面に衝突した
