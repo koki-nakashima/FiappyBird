@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gu1-aA-FXn">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Start Controller-->
+        <scene sceneID="rvo-pM-A7S">
+            <objects>
+                <viewController id="gu1-aA-FXn" customClass="StartController" customModule="FlappyBird" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vOf-BE-NVa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cloud.png" translatesAutoresizingMaskIntoConstraints="NO" id="YSN-uZ-y3V">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                                <color key="backgroundColor" systemColor="labelColor"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="bird_a.png" translatesAutoresizingMaskIntoConstraints="NO" id="aPv-Da-rOb">
+                                <rect key="frame" x="0.0" y="306.66666666666669" width="375" height="144.33333333333331"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FlappyBird" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ijr-Jo-ccm">
+                                <rect key="frame" x="0.0" y="84" width="375" height="80"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="146-u9-nhz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Night Mode" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8w-fG-TlM">
+                                <rect key="frame" x="0.0" y="164" width="375" height="62.666666666666657"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eno-yL-2Le">
+                                <rect key="frame" x="100" y="525" width="175" height="88"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="MCA-N3-lFk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <state key="normal" title="Play">
+                                    <color key="titleColor" systemColor="labelColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonTappedWithSender:" destination="gu1-aA-FXn" eventType="touchDown" id="Epf-za-kaF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="VOA-Ga-rXc"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="VOA-Ga-rXc" firstAttribute="trailing" secondItem="aPv-Da-rOb" secondAttribute="trailing" id="0vJ-t1-nFj"/>
+                            <constraint firstItem="aPv-Da-rOb" firstAttribute="leading" secondItem="VOA-Ga-rXc" secondAttribute="leading" id="A3C-Er-MbK"/>
+                            <constraint firstItem="Ijr-Jo-ccm" firstAttribute="trailing" secondItem="VOA-Ga-rXc" secondAttribute="trailing" id="EF4-7X-vTV"/>
+                            <constraint firstAttribute="bottom" secondItem="YSN-uZ-y3V" secondAttribute="bottom" id="Hgg-Fv-dTr"/>
+                            <constraint firstAttribute="trailing" secondItem="aPv-Da-rOb" secondAttribute="trailing" id="JPd-7z-nI8"/>
+                            <constraint firstItem="b8w-fG-TlM" firstAttribute="leading" secondItem="VOA-Ga-rXc" secondAttribute="leading" id="JUn-Nq-SdM"/>
+                            <constraint firstItem="aPv-Da-rOb" firstAttribute="leading" secondItem="VOA-Ga-rXc" secondAttribute="leading" id="NO5-b9-WCV"/>
+                            <constraint firstItem="VOA-Ga-rXc" firstAttribute="trailing" secondItem="eno-yL-2Le" secondAttribute="trailing" constant="100" id="Rl2-cc-naM"/>
+                            <constraint firstItem="VOA-Ga-rXc" firstAttribute="bottom" secondItem="eno-yL-2Le" secondAttribute="bottom" constant="165" id="SBw-z4-byA"/>
+                            <constraint firstItem="aPv-Da-rOb" firstAttribute="trailing" secondItem="VOA-Ga-rXc" secondAttribute="trailing" id="SyJ-MG-BkA"/>
+                            <constraint firstItem="aPv-Da-rOb" firstAttribute="top" secondItem="b8w-fG-TlM" secondAttribute="bottom" constant="80" id="Tpr-v5-E4K"/>
+                            <constraint firstItem="YSN-uZ-y3V" firstAttribute="top" secondItem="vOf-BE-NVa" secondAttribute="top" id="X22-jf-J0P"/>
+                            <constraint firstItem="YSN-uZ-y3V" firstAttribute="leading" secondItem="VOA-Ga-rXc" secondAttribute="leading" id="YBf-Y0-7YW"/>
+                            <constraint firstItem="YSN-uZ-y3V" firstAttribute="trailing" secondItem="VOA-Ga-rXc" secondAttribute="trailing" id="fCg-Ih-odR"/>
+                            <constraint firstItem="aPv-Da-rOb" firstAttribute="top" secondItem="b8w-fG-TlM" secondAttribute="bottom" constant="80" id="g8V-x8-ezP"/>
+                            <constraint firstItem="eno-yL-2Le" firstAttribute="top" secondItem="aPv-Da-rOb" secondAttribute="bottom" constant="74" id="gDp-YF-har"/>
+                            <constraint firstItem="Ijr-Jo-ccm" firstAttribute="top" secondItem="VOA-Ga-rXc" secondAttribute="top" constant="40" id="hUn-Lh-0gn"/>
+                            <constraint firstItem="b8w-fG-TlM" firstAttribute="trailing" secondItem="VOA-Ga-rXc" secondAttribute="trailing" id="lbp-DZ-9fY"/>
+                            <constraint firstItem="Ijr-Jo-ccm" firstAttribute="leading" secondItem="VOA-Ga-rXc" secondAttribute="leading" id="qkW-H4-EXE"/>
+                            <constraint firstItem="eno-yL-2Le" firstAttribute="leading" secondItem="VOA-Ga-rXc" secondAttribute="leading" constant="100" id="tGB-uW-I58"/>
+                            <constraint firstItem="aPv-Da-rOb" firstAttribute="leading" secondItem="VOA-Ga-rXc" secondAttribute="leading" id="tkF-9h-DR2"/>
+                            <constraint firstItem="b8w-fG-TlM" firstAttribute="top" secondItem="Ijr-Jo-ccm" secondAttribute="bottom" id="vfx-Oq-mIr"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="aPv-Da-rOb" id="tCp-Te-Wh9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ceo-mk-uYR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-556.54205607476638" y="92.008639308855294"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" customModule="FlappyBird" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="s1R-NW-wwk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="139" y="94"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bird_a.png" width="40" height="40"/>
+        <image name="cloud.png" width="340" height="230"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
