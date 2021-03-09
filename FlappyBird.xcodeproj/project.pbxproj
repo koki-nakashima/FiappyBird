@@ -32,7 +32,7 @@
 		165AEC5F25E724EE0019BD96 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165AEC5E25E724EE0019BD96 /* GameScene.swift */; };
 		165AEC6225E927680019BD96 /* StartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165AEC6125E927680019BD96 /* StartController.swift */; };
 		1668DD2525EF3FE100F880FD /* coin03.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 1668DD2425EF3FE100F880FD /* coin03.mp3 */; };
-		16B5085125F7902C009CCFBF /* item.png in Resources */ = {isa = PBXBuildFile; fileRef = 16B5085025F7902C009CCFBF /* item.png */; };
+		16B5085525F79F8C009CCFBF /* item.png in Resources */ = {isa = PBXBuildFile; fileRef = 16B5085425F79F8C009CCFBF /* item.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,7 +63,7 @@
 		165AEC5E25E724EE0019BD96 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		165AEC6125E927680019BD96 /* StartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartController.swift; sourceTree = "<group>"; };
 		1668DD2425EF3FE100F880FD /* coin03.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coin03.mp3; sourceTree = "<group>"; };
-		16B5085025F7902C009CCFBF /* item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = item.png; path = ../../../../Desktop/item.png; sourceTree = "<group>"; };
+		16B5085425F79F8C009CCFBF /* item.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 				165AEC4525E7247C0019BD96 /* bird_a@3x.png */,
 				16312F8425F1082300F2C666 /* BGM.mp3 */,
 				165AEC4425E7247C0019BD96 /* bird_b.png */,
-				16B5085025F7902C009CCFBF /* item.png */,
+				16B5085425F79F8C009CCFBF /* item.png */,
 				165AEC4C25E7247C0019BD96 /* bird_b@2x.png */,
 				165AEC4A25E7247C0019BD96 /* bird_b@3x.png */,
 				165AEC4625E7247C0019BD96 /* cloud.png */,
@@ -204,7 +204,7 @@
 				165AEC5325E7247C0019BD96 /* bird_b.png in Resources */,
 				16312F8525F1082300F2C666 /* BGM.mp3 in Resources */,
 				165AEC5625E7247C0019BD96 /* wall.png in Resources */,
-				16B5085125F7902C009CCFBF /* item.png in Resources */,
+				16B5085525F79F8C009CCFBF /* item.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
